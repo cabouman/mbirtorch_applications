@@ -92,7 +92,7 @@ if __name__ == "__main__":
     if verbose>0:
         print("\n*************** Compute reconstruction ***************")
     # MAR recon; num_metal == 0 gives a standard MBIR recon (split sino for cone beam)
-    recon = mtp.recon_plastic_metal(ct_model, sino, weights_trans, num_metal=num_metal, verbose=verbose,
+    recon, recon_dict = mtp.recon_plastic_metal(ct_model, sino, weights_trans, num_metal=num_metal, verbose=verbose,
                                     max_iterations=max_iterations,
                                     stop_threshold_change_pct=stop_threshold_change_pct,
                                     logfile_path=logfile_path)

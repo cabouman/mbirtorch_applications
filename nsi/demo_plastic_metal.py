@@ -100,7 +100,7 @@ if __name__ == "__main__":
     ct_model.print_params()
 
     print("\n*************** Compute reconstruction ***************")
-    recon = mtp.recon_plastic_metal(ct_model, sino, weights_trans, num_metal=num_metal, verbose=verbose)
+    recon, recon_dict = mtp.recon_plastic_metal(ct_model, sino, weights_trans, num_metal=num_metal, verbose=verbose)
 
     # Compute FDK reconstruction
     recon_fdk = ct_model.direct_recon(sino)
