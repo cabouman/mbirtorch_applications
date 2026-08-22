@@ -179,7 +179,7 @@ if __name__ == "__main__":
 
     # Perform Direct reconstruction
     print("\n********** Perform direct reconstruction **************")
-    direct_recon = ct_model.direct_recon(sinogram)
+    direct_recon = ct_model.recon_direct(sinogram)
 
     if view_alignment is True:
         # Perform sinogram per-view alignment
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
         # Perform direct reconstruction
         print("\n********** Perform direct reconstruction after alignment **************")
-        direct_recon = ct_model.direct_recon(sinogram)
+        direct_recon = ct_model.recon_direct(sinogram)
 
     # Weights
     weights = mt.gen_weights(sinogram, weight_type='transmission_root')

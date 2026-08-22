@@ -63,7 +63,7 @@ if __name__ == "__main__":
     weights = mt.gen_weights(sino, weight_type='transmission_root')
 
     print("\n************** Perform initial FDK reconstruction **************")
-    recon_fdk = ct_model.fdk_recon(sino)
+    recon_fdk = ct_model.recon_fdk(sino)
 
     print("\n************** Calculate MAR sinogram weights **************")
     weights_mar = mt.gen_weights_mar(ct_model, sino, init_recon=recon_fdk, beta=1.0, gamma=3.0)

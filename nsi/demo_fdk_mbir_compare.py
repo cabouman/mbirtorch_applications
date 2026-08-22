@@ -60,7 +60,7 @@ if __name__ == "__main__":
     print("\n************** Perform FDK reconstruction **************")
     # ##########################
     # Perform FDK reconstruction
-    fdk_recon = ct_model.direct_recon(sino)
+    fdk_recon = ct_model.recon_direct(sino)
     #mt.slice_viewer(fdk_recon)
 
     print("\n************** Perform MBIR reconstruction **************")

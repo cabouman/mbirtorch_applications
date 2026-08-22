@@ -103,7 +103,7 @@ if __name__ == "__main__":
     recon, recon_dict = ct_model.recon_plastic_metal(sino, weights_trans, num_metal=num_metal, verbose=verbose)
 
     # Compute FDK reconstruction
-    recon_fdk = ct_model.direct_recon(sino)
+    recon_fdk = ct_model.recon_direct(sino)
 
     # Save recon to hdf5
     print("\n*********** save mar and fdk recon in h5 format *************")

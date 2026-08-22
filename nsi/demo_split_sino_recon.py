@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     print("\n***************** Compute split sino recon ****************")
     t0 = time.time()
-    recon, recon_dict = ct_model.split_sino_recon(sino, weights=weights_trans)
+    recon, recon_dict = ct_model.recon_split_sino(sino, weights=weights_trans)
     t1 = time.time()
     print(f"Stitched recon shape: {recon.shape}   (elapsed: {t1 - t0:.1f}s)")
 
