@@ -182,9 +182,12 @@ if __name__ == "__main__":
     direct_recon = ct_model.recon_direct(sinogram)
 
     if view_alignment is True:
-        # Perform sinogram per-view alignment
+        # Fit each view to the reprojection of the direct reconstruction.  The global offsets go
+        # into the model and the per-view shifts into the data.
         print("\n********** Perform sinogram alignment **************")
-        sinogram = mtp.align_sino_views(ct_model, sinogram, direct_recon)
+        model_params, view_params = mtp.fit_det_alignment(ct_model, sinogram, direct_recon)
+        ct_model.set_params(**model_params)
+        sinogram = mtp.correct_det_alignment(ct_model, sinogram, view_params)
 
         # Perform direct reconstruction
         print("\n********** Perform direct reconstruction after alignment **************")
